@@ -1,0 +1,29 @@
+service: my-minions-final-api
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: sa-east-1
+
+functions:
+  hello:
+    handler: handler.hello
+  putReservations:
+    handler: putReservations.handler
+    events:
+      - http:
+          path: product-reservaions/{id}
+          method: post
+          cors: true
+  sendEmail:
+    handler: sendEmail.sendEmail
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+
+
+environment:
+    TableName: Reservations
+
+     
