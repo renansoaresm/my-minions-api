@@ -2,7 +2,7 @@ const AWS = require('aws-sdk');
 const ses = new AWS.SES();
 AWS.config.region = 'sa-east-1';
 
-const RECEIVER = 'renansoaresmendes@outlook.com';
+const RECEIVER = 'thiago@bgcbrasil.com.br';
 const SENDER = 'renansoaresmendes@outlook.com';
 
 
